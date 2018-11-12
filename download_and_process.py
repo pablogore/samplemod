@@ -3,8 +3,14 @@ import urllib.request
 from collections import namedtuple
 import pandas as pd
 import xlrd
-from livestories import BASE
-from livestories import YEARS
+
+from configparser import ConfigParser
+
+parser = ConfigParser()
+parser.read("settings.ini")
+
+BASE = parser['url']['base_url']
+YEARS = parser['years']['process_years']
 
 UnemploymentRecord = namedtuple('UnemploymentRecord', ('laus_code',
                                                        'state_fips_code',
@@ -15,7 +21,6 @@ UnemploymentRecord = namedtuple('UnemploymentRecord', ('laus_code',
                                                        'employed',
                                                        'unemployment',
                                                        'unemployment_rate'))
-
 
 def main():
     values = YEARS.split(",")
