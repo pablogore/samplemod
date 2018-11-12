@@ -12,14 +12,28 @@ with open('LICENSE') as f:
     license = f.read()
 
 setup(
-    name='sample',
+    name='livestories',
     version='0.1.0',
-    description='Sample package for Python-Guide.org',
+    description='livestories download files and process',
     long_description=readme,
     author='Kenneth Reitz',
-    author_email='me@kennethreitz.com',
-    url='https://github.com/kennethreitz/samplemod',
+    author_email='pablo.m.gore@gmail.com',
+    url='https://github.com/pablogore/livestories',
     license=license,
-    packages=find_packages(exclude=('tests', 'docs'))
+    packages=find_packages(exclude='tests'),
+    install_requires=[
+        'SimpleConfigParser',
+        'pandas',
+    ],
+    include_package_date=True,
+    package_dir={'': '.'},
+    package_data={
+        '': ['*.ini'],
+    },
+    entry_points={
+        'console_scripts': [
+            'live=livestories.scripts.download_and_process:main',
+        ],
+    },
 )
 
