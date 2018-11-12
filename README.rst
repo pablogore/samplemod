@@ -1,12 +1,14 @@
-Sample Module Repository
+Requirements
 ========================
+    1. Python 3.x
+    2. Pip
 
-This simple project is an example repo for Python projects.
+Once you have installed Python & Pip we must install the whole dependencies for the project.
+```bash
+#Install dependencies
+pip install -r requirements.txt
+```
 
-`Learn more <http://www.kennethreitz.org/essays/repository-structure-and-python>`_.
+Inside directory livestories we have the main Python script and configuration file.
 
----------------
 
-If you want to learn more about ``setup.py`` files, check out `this repository <https://github.com/kennethreitz/setup.py>`_.
-
-✨🍰✨
